@@ -1,3 +1,15 @@
+/*********  REACT Components ********* */
+// About Us
+@use './components/AboutUs/AboutUs';
+
+/***************************************/
+
+// Variables
+@import "variables";
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400");
+
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
