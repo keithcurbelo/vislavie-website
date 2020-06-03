@@ -1,6 +1,8 @@
 /*********  REACT Components ********* */
 // About Us
-@use './components/AboutUs/AboutUs';
+@import "./components/AboutUs/AboutUs";
+// Navigation
+@import "./components/Nav/Footer";
 
 /***************************************/
 
@@ -25,3 +27,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#background-video {
+  // height: 100%;
+  // width: 100%;
+  // float: left;
+  // top: 0;
+  // padding: none;
+  // position: fixed; /* optional depending on what you want to do in your app */
+}
+
+// .btn-
