@@ -37,3 +37,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (min-width: 650px) {
+  .img-tile {
+    max-width: 612px;
+  }
+}
