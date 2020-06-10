@@ -1,22 +1,13 @@
 import React, { FunctionComponent } from "react";
 import { Form, Col } from "react-bootstrap";
-
-type InputProps = {
-  id: string;
-  placeholder: string;
-  className?: string;
-  name?: string;
-  text?: string;
-  type?: string;
-  custom?: boolean;
-};
+import { InputProps } from "./interface";
 
 const Input: FunctionComponent<InputProps> = ({ text, type, ...props }) => (
   <Form.Row>
     <Col xs={1} sm={4} />
     <Form.Group as={Col}>
       {/* <Form.Label>Email address</Form.Label> */}
-      <Form.Control {...props} />
+      <Form.Control onChange={props.onChange} {...props} />
       <Form.Text className="text-muted">{text}</Form.Text>
     </Form.Group>
     <Col xs={1} sm={4} />
@@ -28,7 +19,9 @@ export const Select: FunctionComponent<InputProps> = ({ text, ...props }) => (
     <Col xs={1} sm={4} />
     <Form.Group as={Col}>
       {/* <Form.Label>Email address</Form.Label> */}
-      <Form.Control as="select" {...props} custom />
+      <Form.Control as="select" onChange={props.onChange} {...props} custom>
+        {props.children}
+      </Form.Control>
       <Form.Text className="text-muted">{text}</Form.Text>
     </Form.Group>
     <Col xs={1} sm={4} />

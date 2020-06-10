@@ -1,0 +1,24 @@
+{
+  "service_list": [
+    {
+      "id": 0,
+      "label": "Select a service"
+    },
+    {
+      "id": 1,
+      "label": "Boat rental"
+    },
+    {
+      "id": 2,
+      "label": "Car rental"
+    },
+    {
+      "id": 3,
+      "label": "Property rental"
+    },
+    {
+      "id": 4,
+      "label": "Concierge"
+    }
+  ]
+}

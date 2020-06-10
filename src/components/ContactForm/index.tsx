@@ -1,36 +1,12 @@
-import React from "react";
-import { Container, Form, Col, Button } from "react-bootstrap";
-import Input from "./input";
+import React, { useState, FunctionComponent } from "react";
+import { Container } from "react-bootstrap";
+import ContactForm from "./form";
 
-const ContactForm = () => {
-  const FullNameInput = () => (
-    <Input id="name" placeholder="Full name" name="name" />
-  );
-  const EmailInput = () => (
-    <Input id="email" placeholder="Email" name="email" />
-  );
-  const SubmitBtn = () => (
-    <Form.Row>
-      <Col xs={1} sm={4} />
-      <Col className="text-right">
-        <Button variant="dark" type="submit">
-          Submit
-        </Button>
-      </Col>
-      <Col xs={1} sm={4} />
-    </Form.Row>
-  );
+const ContactSection: React.FC = () => (
+  <Container className="py-3">
+    <h2 className="text-center py-3">Contact Us</h2>
+    <ContactForm />
+  </Container>
+);
 
-  return (
-    <Container className="py-3">
-      <h2 className="text-center py-3">Contact Us</h2>
-      <Form>
-        <FullNameInput />
-        <EmailInput />
-        <SubmitBtn />
-      </Form>
-    </Container>
-  );
-};
-
-export default ContactForm;
+export default ContactSection;
