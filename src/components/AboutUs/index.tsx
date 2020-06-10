@@ -1,51 +1,28 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { Container, Col, Row, Carousel } from "react-bootstrap";
-import Yacht from "../../assets/images/yatch.jpeg";
+import { useWindowSize } from "../../utils/components";
+import ImageTiles from "./ImageTiles";
 
 const AboutUs = () => {
+  // const [width, height] = useWindowSize();
   return (
     <Container fluid className="min-vh-100">
-      <Row className="w-100">
-        <Col className="text-center">
+      {/* <Row className="w-100">
+        <Col className="text-center text-uppercase">
           <h2> About Us</h2>
         </Col>
-      </Row>
+      </Row> */}
       <Row className="w-100">
-        <Col className="text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+        <Col className="text-center text-uppercase">
+          <h4 className="font-weight-bold">
+            Everything you need for the ultimate luxury experience
+          </h4>
+          <h6 className="font-weight-light">
+            You deserve nothing other than best
+          </h6>
         </Col>
       </Row>
-      <Row>
-        <Carousel className="w-100 py-3">
-          <Carousel.Item>
-            <img className="d-block w-100" src={Yacht} alt="First slide" />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={Yacht} alt="Third slide" />
-
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={Yacht} alt="Third slide" />
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </Row>
+      <ImageTiles />
     </Container>
   );
 };
