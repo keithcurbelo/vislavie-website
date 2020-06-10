@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useState } from "react";
-import { Container, Col, Row, Carousel } from "react-bootstrap";
-import { useWindowSize } from "../../utils/components";
+import React from "react";
+import { Container, Col, Row } from "react-bootstrap";
+// import { useWindowSize } from "../../utils/components";
 import ImageTiles from "./ImageTiles";
 
 const AboutUs = () => {
