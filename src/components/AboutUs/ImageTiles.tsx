@@ -1,5 +1,5 @@
-import React, { useLayoutEffect, useState } from "react";
-import { Container, Col, Row, Carousel, Image } from "react-bootstrap";
+import React from "react";
+import { Col, Row, Image } from "react-bootstrap";
 // import { useWindowSize } from "../../utils/components";
 //images
 // import YachtTable from "../../assets/images/boat-table.jpg";
