@@ -43,3 +43,17 @@
     max-width: 612px;
   }
 }
+
+#promo-video {
+  // min-height: 50%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  // margin: auto;
+}
+
+.carousel-img {
+  display: block;
+  max-width: 100vw;
+  max-height: 100vh;
+}
