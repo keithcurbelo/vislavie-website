@@ -1,0 +1,22 @@
+{
+  "list": [
+    {
+      "src": "https://media.vislaviemiami.com/images/yacht.jpg",
+      "alt": "boat-image",
+      "title": "Yachts",
+      "description": "Ultimate boating experience"
+    },
+    {
+      "src": "https://media.vislaviemiami.com/images/white_lambo.jpg",
+      "alt": "boat-image",
+      "title": "Exotics",
+      "description": ""
+    },
+    {
+      "src": "https://media.vislaviemiami.com/images/villa2.jpg",
+      "alt": "boat-image",
+      "title": "Villas",
+      "description": ""
+    }
+  ]
+}
