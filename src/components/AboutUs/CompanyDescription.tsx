@@ -8,10 +8,15 @@ const CompanyDescription: React.FC = () => {
   return (
     <Row className="w-100">
       <Col className="text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
+        <p>
+          Discover the unparalleled experience that is Vis La Vie. With us, your
+          dreams become a reality. Prepare yourself for an unforgettable
+          adventure that eill be completely tailored to you. Experience white
+          glove service paired with exceptional scenic water views. Explore
+          secluded sandbars, 5 star restaurants, local marine life and so much
+          more.
+        </p>
+        <p>Welcome to South Florida. The boating capital of the world.</p>
       </Col>
     </Row>
   );
