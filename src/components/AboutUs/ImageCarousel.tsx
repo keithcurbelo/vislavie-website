@@ -1,8 +1,7 @@
-import React, { useLayoutEffect, useState } from "react";
+import React from "react";
 import { Carousel } from "react-bootstrap";
 import Images from "./images.json";
 // import { useWindowSize } from "../../utils/components";
-//images
 
 const ImageCarousel: React.FC = () => (
   // <Row className="vh-100">
