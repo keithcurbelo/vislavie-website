@@ -1,21 +1,15 @@
 import React from "react";
-import YouTube from "react-youtube";
 
 const PromoVideo: React.FC = () => {
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: "1",
-    },
-  };
-
   return (
-    <YouTube
-      videoId="2g811Eo7K8U"
-      //   opts={opts}
-      onReady={(e: any) => e.target.playVideo()}
-    />
+    <video id="promo-video" loop autoPlay muted>
+      <source
+        src="https://media.vislaviemiami.com/videos/aerial-vid.mov"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
   );
 };
+
+export default PromoVideo;
