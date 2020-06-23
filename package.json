@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-brands-svg-icons": "^5.13.1",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -10,7 +14,9 @@
     "@types/node": "^12.12.42",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "@types/react-google-recaptcha": "^1.1.2",
     "@types/youtube": "0.0.38",
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "formik": "^2.1.4",
     "node-sass": "^4.14.1",
@@ -21,7 +27,6 @@
     "react-player": "^2.1.1",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
-    "react-youtube": "^7.11.2",
     "typescript": "^3.7.5"
   },
   "scripts": {
