@@ -9,6 +9,7 @@ export interface OtherProps {
   className?: string;
   name?: string;
   text?: string;
+  // value?: string | Array<any> | number;
   handleChange?: (param: any) => void;
   handleSubmit?: (param: any) => void;
   submitError?: boolean;
@@ -18,11 +19,14 @@ export interface OtherProps {
 export interface InputProps {
   id: string;
   placeholder: string;
+  key?: string | number;
   className?: string;
+  autoComplete?: string;
+  value?: string | Array<any> | number;
   onChange?: (param: any) => void;
   name?: string;
   text?: string;
   type?: string;
   custom?: boolean;
-  children?: React.ReactNode;
+  children?: React.ReactNode | string;
 }
