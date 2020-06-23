@@ -8,7 +8,7 @@ const ImageCarousel: React.FC = () => (
   <Carousel interval={3000} className="w-100">
     {Images.list.map((el: any, i: number) => (
       <Carousel.Item key={i}>
-        <img className="carousel-img" src={el.src} alt="First slide" />
+        <img className="carousel-img" src={el.src} alt={el.alt} />
         <Carousel.Caption>
           <h3>{el.title}</h3>
           <p>{el.description}</p>
