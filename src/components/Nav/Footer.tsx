@@ -11,6 +11,7 @@ const Footer = () => {
         <a
           href="https://instagram.com/vislaviemiami?igshid=11gfn4i03v8tj"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <FontAwesomeIcon
             icon={["fab", "instagram"]}
@@ -18,6 +19,7 @@ const Footer = () => {
             className="social-media-icon"
           />
         </a>
+        <span style={{ margin: "auto" }}>Vis La Vie</span>
         {/* <a href="http://">
           <FontAwesomeIcon
             icon={["fab", "facebook-square"]}
