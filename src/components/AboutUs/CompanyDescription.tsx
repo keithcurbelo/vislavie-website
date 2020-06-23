@@ -1,8 +1,5 @@
 import React from "react";
-import { Container, Col, Row, Carousel } from "react-bootstrap";
-// import Yacht from "../../assets/images/yatch.jpeg";
-// import BlackLambo from "../../assets/images/black_lambo.jpg";
-// import WhiteLambo from "../../assets/images/white_lambo.jpeg";
+import { Col, Row } from "react-bootstrap";
 
 const CompanyDescription: React.FC = () => {
   return (
@@ -18,6 +15,16 @@ const CompanyDescription: React.FC = () => {
         </p>
         <p>Welcome to South Florida. The boating capital of the world.</p>
       </Col>
+      {/* <Row className="w-100">
+        <Col className="text-center text-uppercase">
+          <h4 className="font-weight-bold">
+            Everything you need for the ultimate luxury experience
+          </h4>
+          <h6 className="font-weight-light">
+            You deserve nothing other than best
+          </h6>
+        </Col>
+      </Row> */}
     </Row>
   );
 };
