@@ -1,14 +1,32 @@
 import React from "react";
-// import { Container, Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 // import { getCurrentYear } from "../../utils/appHelpers";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
-  // const [currentYear, setCurrentYear] = useState(getCurrentYear());
+  // const [currentYear] = useState(getCurrentYear());
   return (
     <footer id="main-footer" className="footer text-center">
-      {/* <Row> */}
-      <div>Vis La Vie</div>
-      {/* </Row> */}
+      <Row>
+        <a
+          href="https://instagram.com/vislaviemiami?igshid=11gfn4i03v8tj"
+          target="_blank"
+        >
+          <FontAwesomeIcon
+            icon={["fab", "instagram"]}
+            size="lg"
+            className="social-media-icon"
+          />
+        </a>
+        {/* <a href="http://">
+          <FontAwesomeIcon
+            icon={["fab", "facebook-square"]}
+            size="lg"
+            className="social-media-icon"
+          />
+        </a> */}
+      </Row>
+      {/* <Row>{currentYear}</Row> */}
     </footer>
   );
 };
