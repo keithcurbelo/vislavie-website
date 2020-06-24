@@ -1,8 +1,16 @@
-import React, { useLayoutEffect, useState } from "react";
-import { Container, Form, Col, Button } from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import { Form, Col, Button } from "react-bootstrap";
+import Request from "./ComposeEmail";
+
+import {
+  formatDataEntry,
+  isValidEmail,
+  isValidPhoneNumber,
+  formatPhoneNumber,
+} from "../../utils/appHelpers";
 // import { withFormik, FormikProps, FormikErrors } from "formik";
 // import { FormValues, OtherProps } from "./interface";
-// import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 import Input, { Select } from "./input";
 import Services from "./services.json";
 
@@ -14,16 +22,62 @@ const InnerForm: React.FC = () => {
   //Prop methods
   //   const { handleSubmit } = props;
   //local variables
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [fullname, setFullname] = useState("");
+  const [phonenumber, setPhonenumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [services, setServices] = useState("");
+  const [hasValidEmail, setHasValidEmail] = useState(false);
+  const [hasValidPhoneNumber, setHasValidPhoneNumber] = useState(false);
+  const [hasSelectedService, setHasSelectedService] = useState(false);
+  const [hasCompletedReCAPTCHA, setHasCompletedReCAPTCHA] = useState(false);
+  // let temp = recaptchaRef.current ? recaptchaRef.current.getValue() : null;
+  // console.log("ref", temp);
+
   //Local methods
   //   const handleChangeName = (e: any) => (values.name = e.target.value);
-  const handleChangeName = (e: any) => console.log("name", e.target.value);
+  const handleChangeName = (e: any) => {
+    // e.preventDefault();
+    let name_input = e.target.value;
+    setFullname(name_input);
+    console.log("name", name_input);
+  };
   //   const handleChangeEmail = (e: any) => (values.email = e.target.value);
-  const handleChangeEmail = (e: any) => console.log("email", e.target.value);
-  const handleSelectService = (e: any) =>
-    console.log("service", e.target.value);
+  const handleChangeEmail = (e: any) => {
+    // e.preventDefault();
+    let email_input = e.target.value;
+    setEmail(email_input);
+    console.log("email", email_input);
+    // if (isValidEmail(email_input)) setHasValidEmail(true);
+  };
+  const handleChangePhoneNumber = (e: any) => {
+    e.preventDefault();
+    let phonenumber_input = e.target.value;
+    setPhonenumber(phonenumber_input);
+    // if (isValidPhoneNumber(phonenumber_input)) {
+    console.log("phone number", phonenumber_input);
+    // formatPhoneNumber(phonenumber_input);
+    // setHasValidPhoneNumber(true);
+    // }
+  };
+
+  const handleSelectService = (e: any) => {
+    let services_input = e.target.value;
+    setServices(services_input);
+    if (services_input) setHasSelectedService(true);
+  };
+
+  const handleReCAPTCHA = (val: any) => {
+    console.log("recapturjsahdflk", val);
+    // if (val) setHasCompletedReCAPTCHA(true);
+  };
+
   const submit = (e: any) => {
     e.preventDefault();
-    console.log("submit", e.target[0].value);
+    let formData = formatDataEntry(e.target);
+    let request = new Request(formData);
+    let send = request.sendFormToAgent().then((ret) => ret);
+    console.log("submit", send);
   };
 
   //local components
@@ -37,35 +91,57 @@ const InnerForm: React.FC = () => {
 
   const FullNameInput = () => (
     <Input
+      key={"11"}
       id="name"
       placeholder="Full name"
       name="name"
-      onChange={handleChangeName}
+      value={fullname}
+      onChange={(e) => handleChangeName(e)}
+      autoComplete="name"
+    />
+  );
+  const PhoneInput = () => (
+    <Input
+      key={"12"}
+      id="phone"
+      type="tel"
+      placeholder="Phone number"
+      name="phone"
+      value={phonenumber}
+      onChange={handleChangePhoneNumber}
+      autoComplete="tel"
     />
   );
   const EmailInput = () => (
     <Input
+      key={"13"}
       id="email"
+      type="email"
       placeholder="Email"
       name="email"
+      value={email}
       onChange={handleChangeEmail}
+      autoComplete="email"
     />
   );
 
+  const FormSecurity = () => (
+    <ReCAPTCHA
+      key={4}
+      ref={recaptchaRef}
+      sitekey="6LforKIZAAAAAHb3HJMM6eXvqjPmsL85a-sFGCl4"
+      onChange={handleReCAPTCHA}
+      theme="dark"
+      size="normal"
+    />
+  );
   const SubmitBtn = () => (
-    <Form.Row>
-      <Col xs={1} sm={4} />
+    <Form.Row key={5}>
+      <Col xs={1} sm={4}></Col>
       <Col className="text-right">
-        <Button
-          variant="dark"
-          type="submit"
-          //   onClick={handleSubmit}
-          //   disabled={
-          //     isSubmitting ||
-          //     !!(errors.name && touched.name) ||
-          //     !!(errors.email && touched.email)
-          //   }
-        >
+        <FormSecurity />
+        <br />
+        <Button variant="dark" type="submit" disabled={!hasCompletedReCAPTCHA}>
           Submit
         </Button>
       </Col>
@@ -83,6 +159,7 @@ const InnerForm: React.FC = () => {
         onChange={handleChangeName}
       /> */}
       {/* {errors.name && <div>{errors.name}</div>} */}
+      <PhoneInput />
       <EmailInput />
       {/* <Input
         id="email"
