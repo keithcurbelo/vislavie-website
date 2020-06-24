@@ -25,10 +25,12 @@ const ContactForm: React.FC = () => {
   const [fullname, setFullname] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [email, setEmail] = useState("");
-  const [services, setServices] = useState("");
+  const [services, setServices] = useState(null);
+  // const [otherServices, setOtherServices] = useState("");
   const [hasValidEmail, setHasValidEmail] = useState(false);
   const [hasValidPhoneNumber, setHasValidPhoneNumber] = useState(false);
   const [hasSelectedService, setHasSelectedService] = useState(false);
+  // const [showInputOther, setShowInputOther] = useState(false);
   const [hasCompletedForm, setHasCompletedForm] = useState(false);
   const [hasCompletedReCAPTCHA, setHasCompletedReCAPTCHA] = useState(false);
   // let temp = recaptchaRef.current ? recaptchaRef.current.getValue() : null;
@@ -36,7 +38,7 @@ const ContactForm: React.FC = () => {
 
   //Local methods
   useEffect(() => {
-    if (fullname && hasValidEmail && hasValidPhoneNumber)
+    if (fullname && hasValidEmail && hasValidPhoneNumber && hasSelectedService)
       setHasCompletedForm(true);
     else setHasCompletedForm(false);
   });
@@ -55,7 +57,7 @@ const ContactForm: React.FC = () => {
     if (isValidEmail(email_input)) setHasValidEmail(true);
   };
   const handleChangePhoneNumber = (e: any) => {
-    e.preventDefault();
+    // e.preventDefault();
     let phonenumber_input = e.target.value;
     setPhonenumber(phonenumber_input);
     if (isValidPhoneNumber(phonenumber_input)) {
@@ -66,11 +68,20 @@ const ContactForm: React.FC = () => {
     }
   };
 
-  const handleSelectService = (e: any) => {
-    let services_input = e.target.value;
+  const handleSelectService = (val: any) => {
+    console.log("selected");
+
+    let services_input = val;
     setServices(services_input);
-    if (services_input) setHasSelectedService(true);
+    if (services_input && services_input.length > 0) {
+      // setShowInputOther(val.some((option: any) => option.label === "Other"));
+      setHasSelectedService(true);
+    } else setHasSelectedService(false);
   };
+
+  // const handleChangeInputOther= (e:any)=>{
+  //   setOtherServices(e.target.value)
+  // }
 
   const handleReCAPTCHA = (val: any) => {
     console.log("recapturjsahdflk", val);
@@ -88,10 +99,10 @@ const ContactForm: React.FC = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
+      {/*Full Name */}
       <Form.Row>
         <Col xs={1} sm={4} />
         <Form.Group as={Col}>
-          {/* Name */}
           <Form.Control
             id="name"
             placeholder="Full name"
@@ -104,10 +115,10 @@ const ContactForm: React.FC = () => {
         </Form.Group>
         <Col xs={1} sm={4} />
       </Form.Row>
+      {/* Phone number */}
       <Form.Row>
         <Col xs={1} sm={4} />
         <Form.Group as={Col}>
-          {/* Phone number */}
           <Form.Control
             id="phone"
             type="tel"
@@ -122,10 +133,10 @@ const ContactForm: React.FC = () => {
         </Form.Group>
         <Col xs={1} sm={4} />
       </Form.Row>
+      {/* Email */}
       <Form.Row>
         <Col xs={1} sm={4} />
         <Form.Group as={Col}>
-          {/* Email */}
           <Form.Control
             id="email"
             type="email"
@@ -139,24 +150,53 @@ const ContactForm: React.FC = () => {
         </Form.Group>
         <Col xs={1} sm={4} />
       </Form.Row>
+      {/* Select Service */}
       <Form.Row>
         <Col xs={1} sm={4} />
         <Form.Group as={Col}>
-          {/* <Form.Label>Email address</Form.Label> */}
           <Select
             key={1}
             as="select"
             id="services"
             placeholder="Service"
             name="services"
+            value={services}
             options={Services.service_list}
+            onChange={handleSelectService}
             isMulti
             isClearable
+            theme={(theme) => ({
+              ...theme,
+              borderRadius: 0,
+              colors: {
+                ...theme.colors,
+                primary25: "#d7be69",
+                primary: "black",
+              },
+            })}
           />
           {/* <Form.Text className="text-muted">{text}</Form.Text> */}
         </Form.Group>
         <Col xs={1} sm={4} />
       </Form.Row>
+      {/* other option */}
+      {/* {showInputOther ? (
+      <Form.Row>
+        <Col xs={1} sm={4} />
+        <Form.Group as={Col}>
+          <Form.Control
+            id="other"
+            type="input"
+            placeholder=""
+            name="other"
+            value={otherServices}
+            onChange={handleChangeInputOther}
+          />
+        </Form.Group>
+        <Col xs={1} sm={4} />
+      </Form.Row>
+      ) 
+      : (<></>)} */}
       {/* Submit button */}
       <Form.Row>
         <Col xs={1} sm={4}></Col>
