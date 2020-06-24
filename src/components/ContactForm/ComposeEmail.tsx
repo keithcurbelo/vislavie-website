@@ -5,7 +5,7 @@ export default class ComposeEmail {
   private _phone_number: string;
   private _email: string;
   private _services: string;
-  private _agent_email: string = "keithcurbelo@yahoo.com";
+  private _agent_email: string = "info@vislaviemiami.com";
 
   constructor(form: ContactForm) {
     this._fullname = form.name;
