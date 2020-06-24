@@ -149,7 +149,7 @@ const ContactForm: React.FC = () => {
             type="tel"
             placeholder="Phone number"
             name="phone"
-            maxLength={10}
+            maxLength={14}
             value={phonenumber}
             onChange={handleChangePhoneNumber}
             autoComplete="tel"
