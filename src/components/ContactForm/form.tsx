@@ -74,10 +74,10 @@ const InnerForm: React.FC = () => {
 
   const submit = (e: any) => {
     e.preventDefault();
-    let formData = formatDataEntry(e.target);
-    let request = new Request(formData);
-    let send = request.sendFormToAgent().then((ret) => ret);
-    console.log("submit", send);
+    // let formData = formatDataEntry(e.target);
+    // let request = new Request(formData);
+    // let send = request.sendFormToAgent().then((ret) => ret);
+    // console.log("submit", send);
   };
 
   //local components
