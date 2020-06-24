@@ -46,14 +46,12 @@ const ContactForm: React.FC = () => {
     // e.preventDefault();
     let name_input = e.target.value;
     setFullname(name_input);
-    console.log("name", name_input);
   };
   //   const handleChangeEmail = (e: any) => (values.email = e.target.value);
   const handleChangeEmail = (e: any) => {
     // e.preventDefault();
     let email_input = e.target.value;
     setEmail(email_input);
-    console.log("email", email_input);
     if (isValidEmail(email_input)) setHasValidEmail(true);
   };
   const handleChangePhoneNumber = (e: any) => {
@@ -61,7 +59,6 @@ const ContactForm: React.FC = () => {
     let phonenumber_input = e.target.value;
     setPhonenumber(phonenumber_input);
     if (isValidPhoneNumber(phonenumber_input)) {
-      console.log("phone number", phonenumber_input);
       let formatted_number = formatPhoneNumber(phonenumber_input);
       setPhonenumber(formatted_number);
       setHasValidPhoneNumber(true);
@@ -69,8 +66,6 @@ const ContactForm: React.FC = () => {
   };
 
   const handleSelectService = (val: any) => {
-    console.log("selected");
-
     let services_input = val;
     setServices(services_input);
     if (services_input && services_input.length > 0) {
@@ -84,17 +79,24 @@ const ContactForm: React.FC = () => {
   // }
 
   const handleReCAPTCHA = (val: any) => {
-    console.log("recapturjsahdflk", val);
     if (val) setHasCompletedReCAPTCHA(true);
     else setHasCompletedReCAPTCHA(false);
   };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    let formData = formatDataEntry(e.target);
-    let request = new Request(formData);
+    console.log("selected", services);
+    let formData = {
+      fullname,
+      phonenumber,
+      email,
+      services,
+    };
+    let formatted_entries = formatDataEntry(formData);
+    let request = new Request(formatted_entries);
     let send = request.sendFormToAgent().then((ret) => ret);
-    console.log("submit", send);
+    // send.then(()=>{})
+    // console.log("submit", request.getFormDetails());
   };
 
   return (
