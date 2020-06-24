@@ -13,7 +13,7 @@ const AboutUs = () => {
   } else {
     return (
       <Container fluid className="min-vh-100">
-        <Row className="w-100">
+        <Row className="pt-4">
           <Col className="text-center text-uppercase">
             <h2> About Us</h2>
           </Col>
