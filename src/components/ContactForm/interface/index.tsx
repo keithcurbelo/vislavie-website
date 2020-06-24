@@ -30,3 +30,13 @@ export interface InputProps {
   custom?: boolean;
   children?: React.ReactNode | string;
 }
+
+export interface ContactForm {
+  name: string;
+  email: string;
+  phone_number: string;
+  services: Array<any>;
+}
+export interface ComposeEmailProps {
+  form: ContactForm;
+}
