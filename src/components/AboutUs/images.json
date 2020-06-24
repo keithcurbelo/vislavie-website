@@ -2,18 +2,18 @@
   "list": [
     {
       "src": "https://media.vislaviemiami.com/images/yacht.jpeg",
-      "alt": "boats",
+      "alt": "Yacht",
       "title": "Yachts",
       "description": "Ultimate boating experience"
     },
     {
       "src": "https://media.vislaviemiami.com/images/white_lambo.jpeg",
-      "alt": "cars",
-      "title": "Exotics",
+      "alt": "Exotic car and jet",
+      "title": "Exotic Cars & Jets",
       "description": ""
     },
     {
-      "src": "https://media.vislaviemiami.com/images/villa2.jpg",
+      "src": "https://media.vislaviemiami.com/images/villa.jpg",
       "alt": "villas",
       "title": "Luxury Villas",
       "description": ""
