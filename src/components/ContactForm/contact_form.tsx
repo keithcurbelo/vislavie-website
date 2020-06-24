@@ -33,6 +33,12 @@ const ContactForm: React.FC = () => {
   // const [showInputOther, setShowInputOther] = useState(false);
   const [hasCompletedForm, setHasCompletedForm] = useState(false);
   const [hasCompletedReCAPTCHA, setHasCompletedReCAPTCHA] = useState(false);
+  const [showResponseMessage, setShowResponseMessage] = useState(false);
+  const [responseMessage, setResponseMessage] = useState({
+    color: "",
+    message: "",
+  });
+
   // let temp = recaptchaRef.current ? recaptchaRef.current.getValue() : null;
   // console.log("ref", temp);
 
@@ -41,7 +47,7 @@ const ContactForm: React.FC = () => {
     if (fullname && hasValidEmail && hasValidPhoneNumber && hasSelectedService)
       setHasCompletedForm(true);
     else setHasCompletedForm(false);
-  });
+  }, [fullname, hasValidEmail, hasValidPhoneNumber, hasSelectedService]);
   const handleChangeName = (e: any) => {
     // e.preventDefault();
     let name_input = e.target.value;
@@ -85,7 +91,6 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log("selected", services);
     let formData = {
       fullname,
       phonenumber,
@@ -95,11 +100,29 @@ const ContactForm: React.FC = () => {
     let formatted_entries = formatDataEntry(formData);
     let request = new Request(formatted_entries);
     let send = request.sendFormToAgent().then((ret) => ret);
-    // send.then(()=>{})
+    send
+      .then((resp: any) => {
+        setShowResponseMessage(true);
+        setResponseMessage({
+          color: "black",
+          message: "Thank you! We have received your request.",
+        });
+      })
+      .catch((err: any) => {
+        setShowResponseMessage(true);
+        setResponseMessage({
+          color: "red",
+          message: "Oops! Something went wrong.",
+        });
+      });
     // console.log("submit", request.getFormDetails());
   };
 
-  return (
+  return showResponseMessage ? (
+    <h2 className="text-center" style={{ color: responseMessage["color"] }}>
+      {responseMessage["message"]}
+    </h2>
+  ) : (
     <Form onSubmit={handleSubmit}>
       {/*Full Name */}
       <Form.Row>
