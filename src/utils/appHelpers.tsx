@@ -3,10 +3,14 @@ export const getCurrentYear = () => {
   return date.getFullYear();
 };
 
-export const formatDataEntry = (arr: Array<any>) => ({
-  name: arr[0].value,
-  email: arr[1].value,
-  services: arr[2].value,
+export const formatDataEntry = (obj: any) => ({
+  name: obj.fullname,
+  phone_number: obj.phonenumber,
+  email: obj.email,
+  services:
+    obj.services && obj.services.length > 0
+      ? obj.services.map((srv: any) => srv.label)
+      : [],
 });
 
 export const isValidEmail = (email: string) => {
