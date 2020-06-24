@@ -25,9 +25,11 @@ export const formatPhoneNumber = (
   phone_number = phone_number.toString();
   const regex = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/;
   const formatArr = phone_number.match(regex) || [];
+
   if (regex.test(phone_number)) {
-    if (rawVal) return phone_number.replace(/[()-\s]/g, "");
-    return `(${formatArr[1]}) ${formatArr[2]}-${formatArr[3]}`;
+    return rawVal
+      ? phone_number.replace(/[()-\s]/g, "")
+      : `(${formatArr[1]}) ${formatArr[2]}-${formatArr[3]}`;
   }
 
   return phone_number.replace(/[()-\s]/g, "");
