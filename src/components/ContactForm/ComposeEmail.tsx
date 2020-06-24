@@ -1,20 +1,25 @@
 import axios from "axios";
+import { ContactForm } from "./interface";
 export default class ComposeEmail {
   private _fullname: string;
+  private _phone_number: string;
   private _email: string;
   private _services: string;
   private _agent_email: string = "keithcurbelo@yahoo.com";
 
-  constructor(form: any) {
+  constructor(form: ContactForm) {
     this._fullname = form.name;
+    this._phone_number = form.phone_number;
     this._email = form.email;
-    this._services = form.services;
+    this._services = form.services.join();
     return;
   }
 
   private auotGenerateAgentMessage() {
-    return `${this._fullname} has requested more information for ${this._services}.\n
-            Contact email: ${this._email}
+    return `
+    ${this._fullname} has requested more information for ${this._services}.
+    Contact phone number: ${this._phone_number}
+    Contact email: ${this._email}
     `;
   }
 
@@ -33,13 +38,20 @@ export default class ComposeEmail {
   public getAgentEmail() {
     return this._agent_email;
   }
+  public getFormDetails() {
+    return {
+      name: this._fullname,
+      phone_number: this._phone_number,
+      email: this._email,
+      services: this._services,
+    };
+  }
   public sendFormToAgent() {
     let param = {
       subject: this.createEmailSubject(),
       message: this.auotGenerateAgentMessage(),
       toEmails: [this._agent_email],
     };
-    console.log("par", param);
 
     return axios
       .post(
@@ -47,7 +59,6 @@ export default class ComposeEmail {
         param
       )
       .then((resp) => {
-        console.log("response", resp);
         return resp;
       })
       .catch((err) => err);
