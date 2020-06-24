@@ -1,6 +1,6 @@
 import React, { useState, FunctionComponent } from "react";
 import { Container } from "react-bootstrap";
-import ContactForm from "./form";
+import ContactForm from "./contact_form";
 
 const ContactSection: React.FC = () => (
   <Container className="py-3">
