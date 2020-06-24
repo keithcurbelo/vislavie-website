@@ -13,7 +13,7 @@ const App = () => {
       <div id="content-wrap">
         <IntroMedia />
         <AboutUs />
-        {/* <ContactForm /> */}
+        <ContactForm />
         <Footer />
       </div>
     </div>
