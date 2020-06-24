@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import ContactForm from "./contact_form";
 
