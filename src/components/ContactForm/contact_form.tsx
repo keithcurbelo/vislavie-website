@@ -167,7 +167,7 @@ const ContactForm: React.FC = () => {
             isClearable
             theme={(theme) => ({
               ...theme,
-              borderRadius: 0,
+              borderRadius: 4,
               colors: {
                 ...theme.colors,
                 primary25: "#d7be69",
