@@ -15,7 +15,6 @@ const Footer = () => {
         >
           <FontAwesomeIcon
             icon={["fab", "instagram"]}
-            size="lg"
             className="social-media-icon"
           />
         </a>

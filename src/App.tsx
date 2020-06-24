@@ -9,11 +9,13 @@ import "./sass/App.scss";
 
 const App = () => {
   return (
-    <div className="App">
-      <IntroMedia />
-      <AboutUs />
-      {/* <ContactForm /> */}
-      <Footer />
+    <div id="page-container" className="App">
+      <div id="content-wrap">
+        <IntroMedia />
+        <AboutUs />
+        {/* <ContactForm /> */}
+        <Footer />
+      </div>
     </div>
   );
 };

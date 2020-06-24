@@ -6,7 +6,7 @@
   background-color: #d7be69; //#cbd3dd; //#2c303a;
   width: 100%;
   height: 50px;
-  position: fixed; //absolute; //fixed; //static
+  position: absolute; //absolute; //fixed; //static
   bottom: 0;
   color: black;
   display: flex;
@@ -17,6 +17,6 @@
   font-size: 15px;
   letter-spacing: 3px;
   font-weight: 600;
-  z-index: 99999;
+  // z-index: 99999;
   border-bottom: solid 1px #131418;
 }
