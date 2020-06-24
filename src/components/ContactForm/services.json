@@ -1,24 +1,32 @@
 {
   "service_list": [
     {
-      "id": 0,
-      "label": "Select a service"
+      "value": 1,
+      "label": "Yachts"
     },
     {
-      "id": 1,
-      "label": "Boat rental"
+      "value": 2,
+      "label": "Exotic & Luxury Cars"
     },
     {
-      "id": 2,
-      "label": "Car rental"
+      "value": 3,
+      "label": "Jet skis"
     },
     {
-      "id": 3,
-      "label": "Property rental"
+      "value": 4,
+      "label": "Property"
     },
     {
-      "id": 4,
+      "value": 5,
       "label": "Concierge"
+    },
+    {
+      "value": 6,
+      "label": "Jets"
+    },
+    {
+      "value": 7,
+      "label": "Other"
     }
   ]
 }
