@@ -17,6 +17,12 @@
       "alt": "villas",
       "title": "Luxury Villas",
       "description": ""
+    },
+    {
+      "src": "https://media.vislaviemiami.com/images/concierge.jpeg",
+      "alt": "concierge",
+      "title": "Full Concierge",
+      "description": ""
     }
   ]
 }
