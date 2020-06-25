@@ -14,7 +14,7 @@ const AboutUs = () => {
     return (
       <Container fluid className="min-vh-100">
         <Row className="pt-4">
-          <Col className="text-center text-uppercase">
+          <Col className="text-center text-gold text-uppercase">
             <h2> About Us</h2>
           </Col>
         </Row>

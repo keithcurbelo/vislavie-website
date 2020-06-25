@@ -6,7 +6,7 @@ import Images from "./images.json";
 const ImageTiles: React.FC = () => (
   <Row className="text-center">
     {Images.list.map((el: any, i: number) => (
-      <Col key={i} xs={12} className="p-md-5 p-3">
+      <Col key={i} xs={12} className="p-md-5 p-3 text-white">
         <div className="w-100">
           <Image className="img-tile" src={el.src} alt={el.alt} rounded fluid />
         </div>

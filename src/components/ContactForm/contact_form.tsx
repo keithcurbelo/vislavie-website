@@ -104,14 +104,14 @@ const ContactForm: React.FC = () => {
       .then((resp: any) => {
         setShowResponseMessage(true);
         setResponseMessage({
-          color: "black",
+          color: "white",
           message: "Thank you! We have received your request.",
         });
       })
       .catch((err: any) => {
         setShowResponseMessage(true);
         setResponseMessage({
-          color: "red",
+          color: "firebrick",
           message: "Oops! Something went wrong.",
         });
       });
@@ -232,7 +232,7 @@ const ContactForm: React.FC = () => {
               ref={recaptchaRef}
               sitekey="6LforKIZAAAAAHb3HJMM6eXvqjPmsL85a-sFGCl4"
               onChange={handleReCAPTCHA}
-              theme="dark"
+              theme="light"
               size="compact"
             />
           ) : (
@@ -240,7 +240,7 @@ const ContactForm: React.FC = () => {
           )}
           <br />
           <Button
-            variant="dark"
+            variant="light"
             type="submit"
             disabled={!hasCompletedReCAPTCHA}
             block

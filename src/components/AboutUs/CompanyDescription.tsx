@@ -4,7 +4,7 @@ import { Col, Row } from "react-bootstrap";
 const CompanyDescription: React.FC = () => {
   return (
     <Row className="">
-      <Col className="text-center">
+      <Col className="text-center text-white">
         <p className="p-3 font-sm">
           Discover the unparalleled experience that is Vis La Vie. With us, your
           dreams become a reality. Prepare yourself for an unforgettable
